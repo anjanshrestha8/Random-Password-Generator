@@ -44,6 +44,7 @@ app.post("/", (request, response) => {
     password += pool[b];
   }
   return response.send(password);
+  // return response.send(pool);
 });
 
 app.listen(PORT, () => {
