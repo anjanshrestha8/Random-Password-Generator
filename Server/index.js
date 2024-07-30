@@ -15,11 +15,30 @@ app.post("/", (request, response) => {
   const payload = request.body;
   password = "";
   if (
-    request.body.lowerIsChecked === "true" &&
-    request.body.upperIsChecked === "true"
+    request.body.lowerIsChecked === true &&
+    request.body.upperIsChecked === true &&
+    request.body.numberIsChecked === true
+  ) {
+    pool = lower + upper + number;
+  } else if (
+    request.body.lowerIsChecked === true &&
+    request.body.upperIsChecked === true
   ) {
     pool = lower + upper;
+  } else if (
+    request.body.numberIsChecked === true &&
+    request.body.upperIsChecked === true
+  ) {
+    pool = number + upper;
+  } else if (
+    request.body.lowerIsChecked === true &&
+    request.body.numberIsChecked === true
+  ) {
+    pool = lower + number;
+  } else {
+    pool = lower + upper + number;
   }
+
   for (let i = 0; i < payload.length; i++) {
     b = Math.floor(Math.random() * pool.length);
     password += pool[b];
