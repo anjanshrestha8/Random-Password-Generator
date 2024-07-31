@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import "../assets/css/components/input.css";
-function Input() {
+function Input(props) {
   return (
     <>
       <div className="input-wrapper">
-        <input type="number" />
+        <input type={props.type} onChange={onchange} />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 8080;
+const cors = require("cors");
 
 let lower = "abcdefghijklmnopqrstuvwxyz";
 let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -8,6 +9,7 @@ let number = "1234567890";
 
 let password = "";
 app.use(express.json());
+app.use(cors());
 
 app.post("/", (request, response) => {
   let pool = "";
