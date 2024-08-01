@@ -1,14 +1,30 @@
+.app-section > div {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.app-section > div > h1 {
+  font-size: 3rem;
+  color: rgb(52, 49, 49);
+}
 .app-wrapper {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(248, 193, 193);
+  background-color: black;
+  border-radius: 11px;
 }
 .input-wrapper {
   background-color: white;
   border-radius: 25px;
   padding: 3rem 2rem;
+  transition: all 500ms ease-in-out;
+}
+
+.input-wrapper:hover {
+  cursor: pointer;
+  background-color: rgb(251, 223, 228);
 }
 
 input {
@@ -53,7 +69,24 @@ label {
   display: grid;
   align-items: center;
   justify-content: center;
+  transition: all 500ms ease-in-out;
 }
 .output-wrapper > h1 {
-  color: blueviolet;
+  color: rgb(121, 0, 234);
+  transition: all 500ms ease-in-out;
+}
+.output-wrapper:hover {
+  background-color: rgb(203, 186, 220);
+  cursor: pointer;
+}
+
+.output-wrapper > input {
+  border: 1px solid rebeccapurple;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: red;
 }
