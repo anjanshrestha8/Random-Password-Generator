@@ -76,10 +76,17 @@ label {
   transition: all 500ms ease-in-out;
 }
 .output-wrapper:hover {
-  background-color: rgb(203, 186, 220);
   cursor: pointer;
 }
 
+.copy-button > button {
+  background-color: #008cba;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  border-radius: 4px;
+}
 .output-wrapper > input {
   border: 1px solid rebeccapurple;
 }

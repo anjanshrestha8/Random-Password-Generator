@@ -13,30 +13,30 @@ app.use(cors());
 
 app.post("/", (request, response) => {
   let pool = "";
+  let lowerIsChecked = request.body.lowerIsChecked;
+  let upperIsChecked = request.body.upperIsChecked;
+  let numberIsChecked = request.body.numberIsChecked;
 
   const payload = request.body;
   password = "";
   if (
-    request.body.lowerIsChecked === true &&
-    request.body.upperIsChecked === true &&
-    request.body.numberIsChecked === true
+    lowerIsChecked === true &&
+    upperIsChecked === true &&
+    numberIsChecked === true
   ) {
     pool = lower + upper + number;
-  } else if (
-    request.body.lowerIsChecked === true &&
-    request.body.upperIsChecked === true
-  ) {
+  } else if (lowerIsChecked === true && upperIsChecked === true) {
     pool = lower + upper;
-  } else if (
-    request.body.numberIsChecked === true &&
-    request.body.upperIsChecked === true
-  ) {
+  } else if (numberIsChecked === true && upperIsChecked === true) {
     pool = number + upper;
-  } else if (
-    request.body.lowerIsChecked === true &&
-    request.body.numberIsChecked === true
-  ) {
+  } else if (lowerIsChecked === true && numberIsChecked === true) {
     pool = lower + number;
+  } else if (lowerIsChecked === true) {
+    pool = lower;
+  } else if (upperIsChecked === true) {
+    pool = upper;
+  } else if (numberIsChecked === true) {
+    pool = number;
   } else {
     pool = lower + upper + number;
   }

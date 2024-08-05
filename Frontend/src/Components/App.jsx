@@ -46,7 +46,7 @@ function App() {
                   setIsLowerChecked(!isLowerChecked);
                 }}
               />
-              <label>Must include Lower (a-z)</label>
+              <label>Includes Lower (a-z)</label>
             </div>
             <div className="input">
               <input
@@ -55,7 +55,7 @@ function App() {
                   setIsUpperChecked(!isUpperChecked);
                 }}
               />
-              <label>Must include Upper (A-Z)</label>
+              <label>Includes Upper (A-Z)</label>
             </div>
             <div className="input">
               <input
@@ -64,7 +64,7 @@ function App() {
                   setIsNumberChecked(!isNumberChecked);
                 }}
               />
-              <label>Must include Number (0-9)</label>
+              <label>Includes Number (0-9)</label>
             </div>
             <br />
             <br />
@@ -77,6 +77,16 @@ function App() {
             <h1>This is Random Password :</h1>
             <br />
             <input type="text" value={password} />
+            <br />
+            <div className="copy-button">
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(password);
+                }}
+              >
+                Copy 📋
+              </button>
+            </div>
           </div>
         </div>
         <br />
